@@ -3,6 +3,8 @@
 A fast, search-first reference for C concepts. Type plain English — or half a
 thought with a typo in it — and get the declaration, loop, or gotcha you need.
 
+**Live: https://seojiaf.github.io/c-quickref/**
+
 No build step, no dependencies, no network. Five static files.
 
 ## Run it
