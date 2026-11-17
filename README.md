@@ -5,7 +5,36 @@ thought with a typo in it — and get the declaration, loop, or gotcha you need.
 
 **Live: https://seojiaf.github.io/c-quickref/**
 
-No build step, no dependencies, no network. Five static files.
+355 cards across 18 categories, from `hello, world` to C11 threads, POSIX
+files, sanitizers, and the classic undefined-behavior traps. No build step, no
+dependencies, no network. Five static files.
+
+## What is covered
+
+| Area | Examples |
+| --- | --- |
+| Language | types, qualifiers, operators, scope, declarations, literals |
+| Strings | `mem*`, `str*`, splitting, trimming, UTF-8, wide strings |
+| Control | loops, switch, `goto`, `setjmp`/`longjmp`, early returns |
+| Arrays | initializers, VLAs, 2D arrays, sorting, shuffling, binary search |
+| Functions | varargs, callbacks, function-pointer tables, `inline`, `noreturn` |
+| Pointers | arithmetic, casts, const, `nullptr`, function/array pointers |
+| Memory | allocation, ownership, leaks, arenas, alignment, layout |
+| Structs | padding, bitfields, flexible arrays, unions, opaque types, lists |
+| Preprocessor | macros, stringize/paste, X macros, conditionals, include paths |
+| Files | `fopen` modes, binary I/O, seeking, CSV, buffering, errors |
+| Stdlib | conversions, `rand`, `exit`, environment, `system`, search/sort |
+| Math | roots, powers, rounding, trig, NaN/infinity, `-lm` |
+| Time | `time_t`, `struct tm`, `strftime`, monotonic clocks, benchmarking |
+| Threads | C11 threads, mutexes, condition variables, atomics, TLS, pthreads |
+| POSIX | `getopt`, directories, `stat`, `mmap`, fork/exec, pipes, signals |
+| Tooling | GCC/Clang flags, ASan/UBSan, gdb, Valgrind, make, static analysis |
+| Gotchas | overflow, aliasing, bounds, format bugs, injection, leaks |
+
+Content was cross-checked against [cppreference's C reference](https://en.cppreference.com/w/c),
+[Beej's Guide to C](https://beej.us/guide/bgc/), the
+[comp.lang.c FAQ](https://c-faq.com/), and POSIX man pages. POSIX-only and
+implementation-specific features are labeled in the card notes.
 
 ## Run it
 
@@ -63,19 +92,26 @@ Append an entry to `CONCEPTS` in `data.js`:
 
 ```js
 {
-  id: "my-concept",
-  cat: "basics",              // must exist in CATS
   title: "Do the thing",
-  desc: "One line explaining it.",
+  cat: "Basics",              // must be one of CATS
   tags: ["thing", "example", "synonyms"],
+  aka: "how do i do the thing", // natural-language query
+  sum: "One line explaining it.",
   code: c`
     int x = 1;
-  `
+  `,
+  note: "Optional gotcha or clarification.",
+  pop: 5                       // optional ranking nudge, 0–10
 }
 ```
 
-`c` is a `String.raw` alias, so backslashes stay literal. Tags drive search:
-add the words a person would actually type, not just the formal term.
+`c` is a `String.raw` alias, so backslashes stay literal. `tags` and `aka`
+drive search: add the words a person would actually type, not just the formal
+term. Avoid backticks and `${` inside `code` — they would terminate the
+template literal.
+
+If you add a new category to `CATS`, also give it a color in `style.css`
+(`.cat-<name> { --cat: #rrggbb; }`).
 
 ## Checking search
 

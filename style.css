@@ -626,4 +626,10 @@ footer kbd { font-size: 9.5px; padding: 1px 4px; }
 .cat-structs      { --cat: #73daca; }
 .cat-preprocessor { --cat: #e6c07b; }
 .cat-files        { --cat: #82aaff; }
+.cat-stdlib       { --cat: #a9b1d6; }
+.cat-math         { --cat: #2ac3de; }
+.cat-time         { --cat: #f9c74f; }
+.cat-threads      { --cat: #cba6f7; }
+.cat-posix        { --cat: #a6e3a1; }
+.cat-tooling      { --cat: #94a3b8; }
 .cat-gotchas      { --cat: #f78fb3; }

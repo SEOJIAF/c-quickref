@@ -321,9 +321,11 @@
 
     if (allMatched) {
       const phrase = groups.length > 1 ? rawWords.join(" ") : "";
+      const phraseWord = phrase ? " " + phrase + " " : "";
 
-      if (phrase && entry.normTitle.includes(phrase)) total += 5;
-      else if (phrase && entry.normMeta.includes(phrase)) total += 2;
+      // Require whole-word boundaries: "print int" must not match "print int64_t".
+      if (phraseWord && (" " + entry.normTitle + " ").includes(phraseWord)) total += 5;
+      else if (phraseWord && (" " + entry.normMeta + " ").includes(phraseWord)) total += 2;
 
       // Reward concepts whose title covers several query words.
       let titleHits = 0;
