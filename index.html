@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C quickref — C concepts, instantly</title>
+<meta name="description" content="A fast, search-first C reference. Type plain English — declare char, string, for loop — and get the snippet you need.">
+<meta name="theme-color" content="#0a0c0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' text-anchor='middle' fill='%23ffb454'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#results">Skip to results</a>
+
+<div class="page">
+  <header class="masthead">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">C</div>
+      <div class="brand-text">
+        <b>C quickref</b>
+        <span>Search plain English. Typos welcome.</span>
+      </div>
+    </div>
+    <div class="keys" aria-hidden="true">
+      <kbd>/</kbd> search
+      <span>·</span>
+      <kbd>↑</kbd><kbd>↓</kbd> move
+      <span>·</span>
+      <kbd>↵</kbd> copy
+    </div>
+  </header>
+
+  <div class="dock" id="dock">
+    <div class="searchwrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <input
+        id="q"
+        type="search"
+        placeholder="Search C — try “declare char”, “string”, “for loop”"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        aria-label="Search C concepts"
+        inputmode="search"
+      >
+      <button id="clear" class="clear" type="button" hidden aria-label="Clear search" title="Clear (Esc)">
+        Clear <kbd>esc</kbd>
+      </button>
+    </div>
+  </div>
+
+  <nav id="chips" class="chips" aria-label="Filter by category"></nav>
+
+  <div class="meta">
+    <span id="count" aria-live="polite"></span>
+    <span class="meta-hint">plurals, typos and word order are fine</span>
+  </div>
+
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="results" aria-label="C concepts"></main>
+
+  <div id="empty" class="empty" hidden></div>
+
+  <footer>
+    <span>Plain C · works offline · no dependencies</span>
+    <span class="keys" aria-hidden="true">
+      <kbd>/</kbd> focus <span>·</span>
+      <kbd>↑</kbd><kbd>↓</kbd> move <span>·</span>
+      <kbd>↵</kbd> copy <span>·</span>
+      <kbd>esc</kbd> clear
+    </span>
+  </footer>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<noscript>
+  <p style="max-width: 640px; margin: 40px auto; padding: 24px; border: 1px solid #26303c; border-radius: 12px;">
+    This reference needs JavaScript to search. The concepts are still in <code>data.js</code>.
+  </p>
+</noscript>
+
+<script src="data.js"></script>
+<script src="search.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
